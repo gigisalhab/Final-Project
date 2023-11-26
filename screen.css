@@ -1,17 +1,11 @@
-.site-header {
-    text-align: center;
-}
-
-.navbar {
-    position: sticky;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: #ffffff;
-    z-index: 9;
-    display:flex;
+header{
+    display: flex;
     justify-content: space-between;
     align-items: center;
+    background: #ffffff;
+    position: sticky;
+    top: 0;
+    z-index: 9;
 }
 
   
@@ -20,19 +14,29 @@
     max-height: 170px;
 }
 
-.nav-items{
+#nav-items ul {
     display: flex;
     align-items: left;
 }
 
 
-.nav-items a{
-    margin-left: 10px;
+#nav-items li{
+    margin-right: 10px;
 }
 
-.nav-items a img{
-    width: 30px;
+.nav-items a {
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
 }
+
+#nav-items a img {
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+  }
+
   
 .banner {
     height: 100px;
