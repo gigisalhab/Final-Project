@@ -1,1 +1,61 @@
-/* Add screen styles below */
+.site-header {
+    text-align: center;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    z-index: 9;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+  
+.logo-container img {
+    max-width: 200px;
+    max-height: 170px;
+}
+
+.nav-items{
+    display: flex;
+    align-items: left;
+}
+
+
+.nav-items a{
+    margin-left: 10px;
+}
+
+.nav-items a img{
+    width: 30px;
+}
+  
+.banner {
+    height: 100px;
+    width: 100%;
+    overflow: hidden;
+}
+  
+.banner-content {
+    display: flex;
+    white-space: nowrap;
+    animation: bannermove 15s linear infinite;
+}
+  
+.banner-content a {
+    margin: 0 20px;
+    font-size: 10px;
+    text-decoration: none;
+    color: black;
+    font-family: 'Ubuntu Mono', monospace;
+}
+  
+@keyframes bannermove {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+}
+  
