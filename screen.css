@@ -1,6 +1,7 @@
-header{
+/* Header Styles */
+header {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
     background: #ffffff;
     position: sticky;
@@ -8,58 +9,134 @@ header{
     z-index: 9;
 }
 
-  
 .logo-container img {
     max-width: 200px;
     max-height: 170px;
 }
 
-#nav-items ul {
-    display: flex;
-    align-items: left;
+nav ul {
+    padding: 0;
+    list-style: none;
+    text-align: center;
 }
 
-
-#nav-items li{
-    margin-right: 10px;
+nav ul li {
+    display: inline;
+    margin-right: 20px;
 }
 
-.nav-items a {
+nav ul li a {
+    text-decoration: none;
+    color: #100d0f;
+}
+
+#main-navbar {
+    background-color: #ffffff;
+    color: black;
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+    font-family: 'Ubuntu Mono', monospace;
+}
+
+#main-navbar ul li a {
     text-decoration: none;
     color: black;
-    display: flex;
-    align-items: center;
+    padding: 5px 10px;
 }
 
-#nav-items a img {
-    width: 30px;
-    height: 30px;
-    margin-right: 5px;
-  }
+#main-navbar ul li a:hover {
+    background-color: #00fb26;
+    border-radius: 5px;
+}
 
-  
 .banner {
+    order: 2;
     height: 100px;
     width: 100%;
     overflow: hidden;
 }
-  
+
 .banner-content {
     display: flex;
     white-space: nowrap;
     animation: bannermove 15s linear infinite;
 }
-  
+
 .banner-content a {
-    margin: 0 20px;
+    margin: 0 20px 0 0;
     font-size: 10px;
     text-decoration: none;
     color: black;
     font-family: 'Ubuntu Mono', monospace;
 }
-  
+
 @keyframes bannermove {
     0% { transform: translateX(0%); }
     100% { transform: translateX(-50%); }
 }
-  
+
+/* Content Container */
+.content-container {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Ubuntu Mono', monospace;
+}
+
+/* Filter Box */
+.filter-box {
+    width: 20%;
+    padding: 10px;
+}
+
+.filter-option, .filter-option2, .filter-option3 {
+    margin-bottom: 15px;
+}
+
+/* Product Section */
+.product-section {
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 30px;
+}
+
+.product-card {
+    overflow: hidden;
+}
+
+.product-card img {
+    width: 98%;
+    border: 2px solid black;
+    height: auto;
+    display: block;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .content-container {
+        flex-direction: column;
+    }
+    .filter-box,
+    .product-section {
+        width: 100%;
+    }
+}
+
+/* Filter Form Button */
+#filter-form button {
+    font-family: 'Ubuntu Mono', monospace;
+    margin-top: 10px;
+    padding: 5px 30px;
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+#filter-form button:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
