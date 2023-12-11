@@ -1,17 +1,28 @@
-/* Header Styles */
 header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: #ffffff;
     position: sticky;
     top: 0;
-    z-index: 9;
+    z-index: 1000;
+    background-color: #ffffff;
+    width: 100%;
+    margin: 0;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .logo-container img {
     max-width: 200px;
     max-height: 170px;
+    justify-content: center;
 }
 
 nav ul {
@@ -33,26 +44,18 @@ nav ul li a {
 #main-navbar {
     background-color: #ffffff;
     color: black;
-    padding: 10px;
-    text-align: center;
+    text-align: right;
     font-size: 18px;
     font-family: 'Ubuntu Mono', monospace;
 }
 
-#main-navbar ul li a {
-    text-decoration: none;
-    color: black;
-    padding: 5px 10px;
-}
-
-#main-navbar ul li a:hover {
-    background-color: #00fb26;
-    border-radius: 5px;
+.home-icon {
+    width: 100px;
+    height: auto;
 }
 
 .banner {
-    order: 2;
-    height: 100px;
+    height: 20px;
     width: 100%;
     overflow: hidden;
 }
@@ -76,30 +79,46 @@ nav ul li a {
     100% { transform: translateX(-50%); }
 }
 
-/* Content Container */
 .content-container {
     display: flex;
     justify-content: space-between;
     font-family: 'Ubuntu Mono', monospace;
 }
 
-/* Filter Box */
 .filter-box {
+    position: relative;
     width: 20%;
-    padding: 10px;
+    padding-left: 45px;
+    padding-right: 75px;
+    padding-top: 35px;
+    padding-bottom: 35px;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.512);
+}
+
+.filter-background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
 }
 
 .filter-option, .filter-option2, .filter-option3 {
     margin-bottom: 15px;
 }
 
-/* Product Section */
 .product-section {
+    position: relative;
     flex-grow: 1;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     padding: 30px;
+    overflow: hidden;
+    background-color:#e3cddd;
 }
 
 .product-card {
@@ -107,24 +126,49 @@ nav ul li a {
 }
 
 .product-card img {
-    width: 98%;
+    width: 75%;
     border: 2px solid black;
     height: auto;
     display: block;
 }
 
-/* Responsive Design */
 @media screen and (max-width: 768px) {
     .content-container {
         flex-direction: column;
     }
-    .filter-box,
-    .product-section {
+    .filter-box, .product-section {
         width: 100%;
     }
 }
 
-/* Filter Form Button */
+.purchase-btn {
+    padding: 12px 25px; 
+    background-color: #e63b3b; 
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    font-size: 16px; 
+    font-family: 'Ubuntu Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 2px; 
+    cursor: pointer; 
+    transition: background-color 0.3s, transform 0.3s; 
+    text-decoration: none; 
+    display: inline-block; 
+}
+
+.purchase-btn:hover {
+    background-color: #752d09; 
+    transform: translateY(-2px); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.purchase-btn:active {
+    transform: translateY(1px); 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+}
+
+
 #filter-form button {
     font-family: 'Ubuntu Mono', monospace;
     margin-top: 10px;
@@ -139,4 +183,108 @@ nav ul li a {
 #filter-form button:hover {
     background-color: #ffffff;
     color: #000000;
+}
+
+.product-details {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    background-color:#e3cddd;
+}
+
+
+.product-carousel {
+    position: relative;
+    max-width: 400px;  /* Adjust the width as needed */
+    height: 500px;     /* Adjust the height as needed */
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+.carousel-images {
+    display: flex;
+    width: calc(100% * number_of_images); /* Replace number_of_images with actual count */
+}
+
+.product-carousel img {
+    width: 100%;       /* Ensures each image takes the full width of the carousel */
+    height: 100%;      /* Ensures each image takes the full height of the carousel */
+    object-fit: cover; /* The image will cover the area, potentially cropping it */
+    transition: transform 0.5s ease;
+}
+
+
+
+h1 {
+    margin: 10px 0;
+    color: #333;
+    font-family: 'Ubuntu Mono', monospace;
+    text-transform: uppercase; /* Adds a more mechanical look */
+    letter-spacing: 2px; /* Spacing out the letters */
+    text-align: center;
+}
+
+.product-info {
+    margin-bottom: 20px;
+    font-family: 'Ubuntu Mono', monospace;
+    text-align: center;
+}
+
+.product-info .price {
+    font-size: 1.5em;
+    color: #E44D26;
+    font-weight: bold;
+    background: linear-gradient(45deg, #E44D26, #F0DB4F); /* Gradient effect */
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+button {
+    padding: 10px 20px;
+    border: 2px solid #333;
+    border-radius: 5px;
+    background-color: transparent;
+    color: #333;
+    cursor: pointer;
+    font-size: 1em;
+    font-family: 'Ubuntu Mono', monospace;
+    transition: all 0.3s ease;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+button:hover {
+    background-color: #333;
+    color: white;
+    border-color: #E44D26;
+}
+
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 24px;
+    color: #333;
+    z-index: 100;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 10px;
+    border-radius: 50%; /* Circular shape */
+    transition: transform 0.3s ease; /* Smooth transition for hover */
+}
+
+.carousel-arrow:hover {
+    transform: scale(1.1) translateY(-50%); /* Slightly enlarges arrow on hover */
+}
+
+#left-arrow {
+    left: 10px;
+}
+
+#right-arrow {
+    right: 10px;
 }
