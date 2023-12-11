@@ -198,21 +198,20 @@ nav ul li a {
 
 .product-carousel {
     position: relative;
-    max-width: 400px;  /* Adjust the width as needed */
-    height: 500px;     /* Adjust the height as needed */
+    max-width: 400px; 
+    height: 500px;     
     margin: 20px auto;
     overflow: hidden;
 }
 
 .carousel-images {
     display: flex;
-    width: calc(100% * number_of_images); /* Replace number_of_images with actual count */
 }
 
 .product-carousel img {
-    width: 100%;       /* Ensures each image takes the full width of the carousel */
-    height: 100%;      /* Ensures each image takes the full height of the carousel */
-    object-fit: cover; /* The image will cover the area, potentially cropping it */
+    width: 100%;      
+    height: 100%;     
+    object-fit: cover; 
     transition: transform 0.5s ease;
 }
 
@@ -222,8 +221,8 @@ h1 {
     margin: 10px 0;
     color: #333;
     font-family: 'Ubuntu Mono', monospace;
-    text-transform: uppercase; /* Adds a more mechanical look */
-    letter-spacing: 2px; /* Spacing out the letters */
+    text-transform: uppercase; 
+    letter-spacing: 2px; 
     text-align: center;
 }
 
@@ -237,8 +236,6 @@ h1 {
     font-size: 1.5em;
     color: #E44D26;
     font-weight: bold;
-    background: linear-gradient(45deg, #E44D26, #F0DB4F); 
-    color: transparent;
 }
 
 button {
@@ -272,13 +269,12 @@ button:hover {
     z-index: 100;
     background-color: rgba(255, 255, 255, 0.5);
     padding: 10px;
-    border-radius: 50%; /* Circular shape */
-    transition: transform 0.3s ease; /* Smooth transition for hover */
+    border-radius: 50%; 
+    transition: transform 0.3s ease; 
 }
 
 .carousel-arrow:hover {
-    transform: scale(1.1) translateY(-50%); /* Slightly enlarges arrow on hover */
-}
+    transform: scale(1.1) translateY(-50%); 
 
 #left-arrow {
     left: 10px;
