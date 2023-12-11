@@ -276,6 +276,8 @@ button:hover {
 .carousel-arrow:hover {
     transform: scale(1.1) translateY(-50%); 
 
+}
+
 #left-arrow {
     left: 10px;
 }
